@@ -2,7 +2,7 @@
 
 Work on progress !!!
 
-Simple demo at : https://silvering-faceobjectdetection.streamlit.app/
+Simple demo at : https://silvering-makeupdetection.streamlit.app/
 
 cc :
   - Steven (should be github username)
