@@ -13,7 +13,7 @@ class Predict:
 
     def __init__(self):
         if not os.path.isfile(self.MODEL_PATH):
-            gdown.download(id="1O8j7sHxGceMRCHdMgI7m_AdrcLU0R5eP", output=self.MODEL_PATH)
+            gdown.download(id=st.secrets["MODEL_ID"], output=self.MODEL_PATH)
 
         self.model = YOLO(self.MODEL_PATH)
 
