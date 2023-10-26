@@ -1,5 +1,5 @@
 import os
-import wget
+import gdown
 
 import cv2
 import numpy as np
@@ -13,7 +13,7 @@ class Predict:
 
     def __init__(self):
         if not os.path.isfile(self.MODEL_PATH):
-            wget.download(st.secrets["MODEL_URL"], out="model")
+            gdown.download(id="1O8j7sHxGceMRCHdMgI7m_AdrcLU0R5eP", output="model")
 
         self.model = YOLO(self.MODEL_PATH)
 
@@ -26,4 +26,9 @@ class Predict:
         return result[0].plot()
 
 
-predict = Predict()
+@st.cache_data
+def create_object():
+    return Predict()
+
+
+predict = create_object()
