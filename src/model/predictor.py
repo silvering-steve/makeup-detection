@@ -9,11 +9,11 @@ import streamlit as st
 
 
 class Predict:
-    MODEL_PATH = "models/makeup.pt"
+    MODEL_PATH = "models\makeup.pt"
 
     def __init__(self):
         if not os.path.isfile(self.MODEL_PATH):
-            gdown.download(id=st.secrets['MODEL_ID'], output="models")
+            gdown.download(id="1O8j7sHxGceMRCHdMgI7m_AdrcLU0R5eP", output=self.MODEL_PATH)
 
         self.model = YOLO(self.MODEL_PATH)
 
@@ -26,9 +26,4 @@ class Predict:
         return result[0].plot()
 
 
-@st.cache_data
-def create_object():
-    return Predict()
-
-
-predict = create_object()
+predict = Predict()
