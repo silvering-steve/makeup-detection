@@ -9,11 +9,11 @@ import streamlit as st
 
 
 class Predict:
-    MODEL_PATH = "model/makeup.pt"
+    MODEL_PATH = "models/makeup.pt"
 
     def __init__(self):
         if not os.path.isfile(self.MODEL_PATH):
-            wget.download(st.secrets["MODEL_URL"], out="model")
+            wget.download(st.secrets["MODEL_URL"], out="models")
 
         self.model = YOLO(self.MODEL_PATH)
 
